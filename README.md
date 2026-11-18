@@ -6,7 +6,7 @@ Website: https://zhangzh1328.github.io/
 
 ## Updating the page
 
-Edit `index.html` to update the biography, research interests, publications, or academic service. The file includes all styles and the owner-provided avatar and does not require a build system or installed dependencies. Section links, email links, and Google Scholar links are ordinary HTML.
+Edit `index.html` to update the biography, research interests, publications, or academic service. The file includes all styles and the owner-provided avatar and does not require a build system or installed dependencies. The `paper-*.webp` files contain lossless overview figures extracted from the original papers. Each thumbnail opens the full-size figure, and publication links point to their source pages. No Code links or acceptance/preprint status labels are displayed.
 
 The website supports desktop and mobile layouts, automatic light/dark appearance, keyboard navigation, and printing.
 

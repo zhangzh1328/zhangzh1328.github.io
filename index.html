@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Zhenhao Zhang | University of Macau</title>
-  <meta name="description" content="Zhenhao Zhang, incoming PhD student at the University of Macau. Graph learning, single-cell and spatial multi-omics, and computational medicine.">
+  <meta name="description" content="Incoming PhD student at the University of Macau researching AI-driven bioinformatics and computational medicine.">
   <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://zhangzh1328.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Zhenhao Zhang | University of Macau">
-  <meta property="og:description" content="Zhenhao Zhang, incoming PhD student at the University of Macau. Graph learning, single-cell and spatial multi-omics, and computational medicine.">
+  <meta property="og:description" content="Incoming PhD student at the University of Macau researching AI-driven bioinformatics and computational medicine.">
   <meta property="og:url" content="https://zhangzh1328.github.io/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23193d58'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia' font-size='35' fill='white'%3EZ%3C/text%3E%3C/svg%3E">
   <style>/* Minimal Light, CC0-1.0; customized for Zhenhao Zhang. */
@@ -218,13 +218,21 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-ra
 .interests li { margin-bottom:9px; padding-left:3px; }
 .interests strong { font-weight:600; color:var(--ink); }
 .publication-list { list-style:none; padding:0; margin:0; }
-.publication { margin:0 0 23px; }
-.publication h4 { font-size:16px; font-weight:600; line-height:1.45; margin:0 0 5px; }
-.authors { font-size:13px; color:var(--muted); line-height:1.6; margin:0 0 4px; }
+.publication { display:grid; grid-template-columns:178px minmax(0,1fr); gap:24px; align-items:start; margin:0 0 35px; }
+.publication-text-only { grid-template-columns:1fr; }
+.paper-figure { display:block; position:relative; margin-top:9px; border-radius:8px; cursor:zoom-in; }
+.paper-figure img { display:block; width:100%; height:128px; box-sizing:border-box; padding:5px; object-fit:contain; background:#fff; border:1px solid #e7eaf0; border-radius:8px; box-shadow:0 3px 9px rgb(25 51 75 / 15%); transition:box-shadow .18s ease; }
+.paper-figure:hover img { box-shadow:0 4px 13px rgb(25 51 75 / 24%); }
+.venue-badge { position:absolute; top:-8px; left:-6px; padding:3px 9px; border-radius:3px; color:#fff; background:#123e70; font:600 10px/1.5 Arial,sans-serif; letter-spacing:.15px; box-shadow:0 2px 5px rgb(16 45 81 / 22%); white-space:nowrap; }
+.publication h4 { font-size:16px; font-weight:600; color:var(--accent); line-height:1.45; margin:0 0 6px; }
+.authors { font-size:13px; color:#79674f; line-height:1.6; margin:0 0 5px; }
 .authors strong { color:var(--ink); font-weight:600; }
 .venue { font-size:13px; margin:0; line-height:1.7; }
 .venue cite { font-style:italic; }
-.paper-note { display:inline-block; margin-left:5px; color:var(--accent); font-family:Arial,sans-serif; font-size:10px; line-height:1.8; padding:0 6px; background:var(--soft); border:1px solid #deebf3; border-radius:3px; vertical-align:1px; }
+.publication-actions { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin-top:7px; }
+.publication-actions:empty { display:none; }
+.paper-action { display:inline-flex; gap:4px; align-items:center; padding:2px 8px; border:1px solid #b5c7d5; border-radius:3px; font:11px/1.6 Arial,sans-serif; color:var(--ink); }
+.paper-action:hover { background:var(--soft); text-decoration:none; }
 .education-list { list-style:none; padding:0; margin:0; }
 .education-list li { display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin:0 0 18px; }
 .education-list strong { display:block; color:var(--ink); font-weight:600; }
@@ -241,7 +249,8 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-ra
   :root { --ink:#dceaf4; --muted:#a3b1bf; --line:#39414c; --soft:#283b49; --accent:#86c8ed; }
   body { background:#20212b; color:#c9d0d8; }
   .avatar-photo { border-color:#405463; }
-  .paper-note { border-color:#405463; }
+  .authors { color:#bdb2a1; }
+  .paper-action { border-color:#52616f; }
   a:hover { color:#c6e7fa; }
   .skip-link { background:#20212b; }
 }
@@ -270,14 +279,19 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-ra
   .authors,.venue { font-size:12px; }
   h2 { font-size:22px; }
 }
-@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media (max-width:600px) {
+  .publication { grid-template-columns:1fr; gap:15px; margin-bottom:33px; }
+  .paper-figure { width:220px; max-width:100%; margin-top:7px; }
+  .paper-figure img { height:145px; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .paper-figure img { transition:none; } }
 @media print {
   .wrapper { width:auto; } header { position:static; float:none; width:auto; padding:0 0 20px; }
   main { width:auto; float:none; padding:0; } .avatar-photo,.section-nav,.skip-link { display:none; }
   .publication { break-inside:avoid; } body { color:#222; background:white; }
 }
 </style>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Zhenhao Zhang", "url": "https://zhangzh1328.github.io/", "sameAs": ["https://github.com/zhangzh1328", "https://scholar.google.com/citations?user=ZVHhZc4AAAAJ&hl=en"], "description": "Zhenhao Zhang, incoming PhD student at the University of Macau. Graph learning, single-cell and spatial multi-omics, and computational medicine."}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Zhenhao Zhang", "url": "https://zhangzh1328.github.io/", "sameAs": ["https://github.com/zhangzh1328", "https://scholar.google.com/citations?user=ZVHhZc4AAAAJ&hl=en"], "description": "Incoming PhD student at the University of Macau researching AI-driven bioinformatics and computational medicine."}</script>
 </head>
 <body>
 <a class="skip-link" href="#about">Skip to content</a>
@@ -296,75 +310,151 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-ra
   <main id="main-content">
     <section id="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About Me</h2>
-      <p>I am an incoming PhD student at the <a href="https://www.um.edu.mo/">University of Macau</a>. My research lies at the intersection of machine learning, bioinformatics, and computational medicine.</p>
-      <p>I develop graph-based, multimodal, and self-supervised learning methods for single-cell and spatial multi-omics data, with a focus on spatial domain identification, cell-state characterisation, cross-sample integration, and biologically informed inference. I also work with clinical and longitudinal health data for prognosis, patient representation learning, and precision medicine.</p>
+      <p>Incoming PhD student at the <a href="https://www.um.edu.mo/">University of Macau</a> researching AI-driven bioinformatics and computational medicine. I develop graph-based, multimodal, and self-supervised learning methods to analyze single-cell/spatial multi-omics and longitudinal clinical data, aiming to advance cellular characterization, patient representation learning, and precision medicine.</p>
     </section>
     <section id="research" aria-labelledby="research-heading">
       <h2 id="research-heading">Research Interests</h2>
       <ul class="interests">
-        <li><strong>Single-cell &amp; spatial multi-omics.</strong> Spatial domain identification, cell states, and integration across samples and modalities.</li>
-        <li><strong>Graph &amp; self-supervised learning.</strong> Graph representation learning, contrastive learning, and multimodal learning.</li>
-        <li><strong>Computational medicine.</strong> Electronic health records, longitudinal patient modelling, and outcome prediction.</li>
+        <li><strong>Single-Cell &amp; Spatial Multi-Omics:</strong> Characterizing tissue architecture, interpreting cellular heterogeneity, and developing cross-modal data integration.</li>
+        <li><strong>Machine Learning &amp; Representation Learning:</strong> Graph neural networks, self-supervised learning, and multimodal learning.</li>
+        <li><strong>Computational Medicine:</strong> Longitudinal electronic health record, patient similarity analysis, and clinical outcome prediction.</li>
       </ul>
     </section>
     <section id="publications" aria-labelledby="publications-heading">
-      <h2 id="publications-heading">Selected Research Outputs</h2>
+      <h2 id="publications-heading">Publications</h2>
       <h3>Computational Biology &amp; Bioinformatics</h3>
-      <ol class="publication-list"><li class="publication">
-      <h4>GatorPrism: Prototype-Conditioned Routing across Coalition Graph Experts for Spatial Multi-Omics Integration</h4>
+      <ol class="publication-list"><li class="publication" data-paper="gatorprism">
+      <a class="paper-figure" href="paper-gatorprism.webp" target="_blank" rel="noopener" title="View full-size overview: Figure 1">
+          <img src="paper-gatorprism.webp" alt="GatorPrism: Prototype-Conditioned Routing across Coalition Graph Experts for Spatial Multi-Omics Integration — Figure 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2027">KDD</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.64898/2026.07.21.739865" target="_blank" rel="noopener">GatorPrism: Prototype-Conditioned Routing across Coalition Graph Experts for Spatial Multi-Omics Integration</a></h4>
       <p class="authors"><strong>Zhenhao Zhang</strong>, Yiyao Zhang, Xiangtao Li, Jiang Bian, Jun Shen, Yuxi Liu</p>
-      <p class="venue"><cite>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</cite>, 2027. <span class="paper-note">Accepted</span></p>
+      <p class="venue"><cite>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</cite>, 2027.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.64898/2026.07.21.739865" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>GatorTrio: Topology-Refined Tri-View Graph Learning for Spatial Domain Identification in Spatial Transcriptomics</h4>
+<li class="publication" data-paper="gatortrio">
+      <a class="paper-figure" href="paper-gatortrio.webp" target="_blank" rel="noopener" title="View full-size overview: Figure 1">
+          <img src="paper-gatortrio.webp" alt="GatorTrio: Topology-Refined Tri-View Graph Learning for Spatial Domain Identification in Spatial Transcriptomics — Figure 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2026">KDD</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1145/3770855.3818918" target="_blank" rel="noopener">GatorTrio: Topology-Refined Tri-View Graph Learning for Spatial Domain Identification in Spatial Transcriptomics</a></h4>
       <p class="authors"><strong>Zhenhao Zhang</strong>, Jun Shen, Jiang Bian, Yuxi Liu</p>
-      <p class="venue"><cite>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</cite>, 2026. </p>
+      <p class="venue"><cite>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</cite>, 2026.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1145/3770855.3818918" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>GatorST: A Versatile Contrastive Meta-Learning Framework for Spatial Transcriptomic Data Analysis</h4>
+<li class="publication" data-paper="gatorst">
+      <a class="paper-figure" href="paper-gatorst.webp" target="_blank" rel="noopener" title="View full-size overview: FIGURE 1">
+          <img src="paper-gatorst.webp" alt="GatorST: A Versatile Contrastive Meta-Learning Framework for Spatial Transcriptomic Data Analysis — FIGURE 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="Small Methods, 2026">Small Methods</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1002/smtd.202600006" target="_blank" rel="noopener">GatorST: A Versatile Contrastive Meta-Learning Framework for Spatial Transcriptomic Data Analysis</a></h4>
       <p class="authors"><strong>Zhenhao Zhang</strong>, Yuxi Liu, Song Wang, Qin Ma, Qianqian Song, Jiang Bian</p>
-      <p class="venue"><cite>Small Methods</cite>, 2026. </p>
+      <p class="venue"><cite>Small Methods</cite>, 2026.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1002/smtd.202600006" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>GatorSC: Multi-Scale Cell and Gene Graphs with Mixture-of-Experts Fusion for Single-Cell Transcriptomics</h4>
+<li class="publication" data-paper="gatorsc">
+      <a class="paper-figure" href="paper-gatorsc.webp" target="_blank" rel="noopener" title="View full-size overview: Figure 1">
+          <img src="paper-gatorsc.webp" alt="GatorSC: Multi-Scale Cell and Gene Graphs with Mixture-of-Experts Fusion for Single-Cell Transcriptomics — Figure 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="Briefings in Bioinformatics, 2026">Brief. Bioinform.</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1093/bib/bbag330" target="_blank" rel="noopener">GatorSC: Multi-Scale Cell and Gene Graphs with Mixture-of-Experts Fusion for Single-Cell Transcriptomics</a></h4>
       <p class="authors">Yuxi Liu*, <strong>Zhenhao Zhang</strong>*, Mufan Qiu, Song Wang, Flora D. Salim, Jun Shen, Tianlong Chen, Imran Razzak, Fuyi Li, Jiang Bian</p>
-      <p class="venue"><cite>Briefings in Bioinformatics</cite>, 2026. <span class="paper-note">Equal contribution</span></p>
+      <p class="venue"><cite>Briefings in Bioinformatics</cite>, 2026.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1093/bib/bbag330" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>Graph Contrastive Learning as a Versatile Foundation for Advanced scRNA-seq Data Analysis</h4>
+<li class="publication" data-paper="scrna-contrastive">
+      <a class="paper-figure" href="paper-scrna-contrastive.webp" target="_blank" rel="noopener" title="View full-size overview: Figure 1">
+          <img src="paper-scrna-contrastive.webp" alt="Graph Contrastive Learning as a Versatile Foundation for Advanced scRNA-seq Data Analysis — Figure 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="Briefings in Bioinformatics, 2024">Brief. Bioinform.</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1093/bib/bbae558" target="_blank" rel="noopener">Graph Contrastive Learning as a Versatile Foundation for Advanced scRNA-seq Data Analysis</a></h4>
       <p class="authors"><strong>Zhenhao Zhang</strong>, Yuxi Liu, Meichen Xiao, Kun Wang, Yu Huang, Jiang Bian, Ruolin Yang, Fuyi Li</p>
-      <p class="venue"><cite>Briefings in Bioinformatics</cite>, 2024. </p>
+      <p class="venue"><cite>Briefings in Bioinformatics</cite>, 2024.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1093/bib/bbae558" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>GatorDuo: Global-consistency dual-graph refinement with pseudo-label agreement for robust spatial domain identification in spatial transcriptomics</h4>
+<li class="publication" data-paper="gatorduo">
+      <a class="paper-figure" href="paper-gatorduo.webp" target="_blank" rel="noopener" title="View full-size overview: Fig. 1">
+          <img src="paper-gatorduo.webp" alt="GatorDuo: Global-consistency dual-graph refinement with pseudo-label agreement for robust spatial domain identification in spatial transcriptomics — Fig. 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="bioRxiv, 2026">bioRxiv</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.64898/2026.05.10.724039" target="_blank" rel="noopener">GatorDuo: Global-consistency dual-graph refinement with pseudo-label agreement for robust spatial domain identification in spatial transcriptomics</a></h4>
       <p class="authors"><strong>Zhenhao Zhang</strong>, Antonio Jimeno Yepes, Jiang Bian, Fuyi Li, Yuxi Liu</p>
-      <p class="venue"><cite>bioRxiv</cite>, 2026. <span class="paper-note">Preprint</span></p>
+      <p class="venue"><cite>bioRxiv</cite>, 2026.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.64898/2026.05.10.724039" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li></ol>
       <h3>Computational Medicine &amp; Health Informatics</h3>
-      <ol class="publication-list"><li class="publication">
-      <h4>GatorCLR: Personalized predictions of patient outcomes on electronic health records using self-supervised contrastive graph representation</h4>
+      <ol class="publication-list"><li class="publication" data-paper="gatorclr">
+      <a class="paper-figure" href="paper-gatorclr.webp" target="_blank" rel="noopener" title="View full-size overview: Fig. 1">
+          <img src="paper-gatorclr.webp" alt="GatorCLR: Personalized predictions of patient outcomes on electronic health records using self-supervised contrastive graph representation — Fig. 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="Journal of Biomedical Informatics, 2025">J. Biomed. Inform.</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1016/j.jbi.2025.104851" target="_blank" rel="noopener">GatorCLR: Personalized predictions of patient outcomes on electronic health records using self-supervised contrastive graph representation</a></h4>
       <p class="authors">Yuxi Liu, <strong>Zhenhao Zhang</strong>, Jiacong Mi, Shirui Pan, Tianlong Chen, Yi Guo, Xing He, Jiang Bian</p>
-      <p class="venue"><cite>Journal of Biomedical Informatics</cite>, 2025. </p>
+      <p class="venue"><cite>Journal of Biomedical Informatics</cite>, 2025.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1016/j.jbi.2025.104851" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>A Natural Language Processing-Based Approach for Early Detection of Heart Failure Onset using Electronic Health Records</h4>
+<li class="publication" data-paper="heart-failure">
+      <a class="paper-figure" href="paper-heart-failure.webp" target="_blank" rel="noopener" title="View full-size overview: Fig. 1">
+          <img src="paper-heart-failure.webp" alt="A Natural Language Processing-Based Approach for Early Detection of Heart Failure Onset using Electronic Health Records — Fig. 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="Knowledge-Based Systems, 2025">Knowl.-Based Syst.</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1016/j.knosys.2025.114102" target="_blank" rel="noopener">A Natural Language Processing-Based Approach for Early Detection of Heart Failure Onset using Electronic Health Records</a></h4>
       <p class="authors">Yuxi Liu, Zhen Tan, <strong>Zhenhao Zhang</strong>, Song Wang, Jingchuan Guo, Huan Liu, Tianlong Chen, Jiang Bian</p>
-      <p class="venue"><cite>Knowledge-Based Systems</cite>, 2025. </p>
+      <p class="venue"><cite>Knowledge-Based Systems</cite>, 2025.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1016/j.knosys.2025.114102" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>Boosting Patient Representation Learning via Graph Contrastive Learning</h4>
+<li class="publication" data-paper="patient-representation">
+      <a class="paper-figure" href="paper-patient-representation.webp" target="_blank" rel="noopener" title="View full-size overview: Fig. 1">
+          <img src="paper-patient-representation.webp" alt="Boosting Patient Representation Learning via Graph Contrastive Learning — Fig. 1" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD), 2024">ECML PKDD</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1007/978-3-031-70378-2_21" target="_blank" rel="noopener">Boosting Patient Representation Learning via Graph Contrastive Learning</a></h4>
       <p class="authors"><strong>Zhenhao Zhang</strong>, Yuxi Liu, Jiang Bian, Antonio Jimeno Yepes, Jun Shen, Fuyi Li, Guodong Long, Flora D. Salim</p>
-      <p class="venue"><cite>European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD)</cite>, 2024. </p>
+      <p class="venue"><cite>European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD)</cite>, 2024.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1007/978-3-031-70378-2_21" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>Contrastive Learning-based Imputation Prediction Networks for In-hospital Mortality Risk Prediction using EHRs</h4>
+<li class="publication" data-paper="imputation-prediction">
+      <a class="paper-figure" href="paper-imputation-prediction.webp" target="_blank" rel="noopener" title="View full-size overview: Fig. 2">
+          <img src="paper-imputation-prediction.webp" alt="Contrastive Learning-Based Imputation-Prediction Networks for In-hospital Mortality Risk Modeling Using EHRs — Fig. 2" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD), 2023">ECML PKDD</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1007/978-3-031-43427-3_26" target="_blank" rel="noopener">Contrastive Learning-Based Imputation-Prediction Networks for In-hospital Mortality Risk Modeling Using EHRs</a></h4>
       <p class="authors">Yuxi Liu, <strong>Zhenhao Zhang</strong>, Shaowen Qin, Flora D. Salim, Antonio Jimeno Yepes</p>
-      <p class="venue"><cite>European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD)</cite>, 2023. </p>
+      <p class="venue"><cite>European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD)</cite>, 2023.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1007/978-3-031-43427-3_26" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li>
-<li class="publication">
-      <h4>Modeling long-term dependencies and short-term correlations in patient journey data with temporal attention networks for health prediction</h4>
+<li class="publication" data-paper="temporal-attention">
+      <a class="paper-figure" href="paper-temporal-attention.webp" target="_blank" rel="noopener" title="View full-size overview: Figure 2">
+          <img src="paper-temporal-attention.webp" alt="Modeling long-term dependencies and short-term correlations in patient journey data with temporal attention networks for health prediction — Figure 2" width="180" height="128" loading="lazy" decoding="async">
+          <span class="venue-badge" title="ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (BCB), 2022">ACM BCB</span>
+        </a>
+      <div class="paper-info">
+      <h4><a href="https://doi.org/10.1145/3535508.3545535" target="_blank" rel="noopener">Modeling long-term dependencies and short-term correlations in patient journey data with temporal attention networks for health prediction</a></h4>
       <p class="authors">Yuxi Liu, <strong>Zhenhao Zhang</strong>, Antonio Jimeno Yepes, Flora D. Salim</p>
-      <p class="venue"><cite>ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (BCB)</cite>, 2022. </p>
+      <p class="venue"><cite>ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (BCB)</cite>, 2022.</p>
+      <div class="publication-actions"><a class="paper-action" href="https://doi.org/10.1145/3535508.3545535" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+      </div>
     </li></ol>
     </section>
     <section id="service" aria-labelledby="service-heading">
