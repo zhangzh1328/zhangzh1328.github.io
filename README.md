@@ -6,7 +6,7 @@ Website: https://zhangzh1328.github.io/
 
 ## Updating the page
 
-Edit `index.html` to update the biography, research interests, publications, or academic service. The file includes all styles and does not require a build system or installed dependencies. Section links, email links, Google Scholar, and code links are ordinary HTML.
+Edit `index.html` to update the biography, research interests, publications, or academic service. The file includes all styles and the owner-provided avatar and does not require a build system or installed dependencies. Section links, email links, and Google Scholar links are ordinary HTML.
 
 The website supports desktop and mobile layouts, automatic light/dark appearance, keyboard navigation, and printing.
 
